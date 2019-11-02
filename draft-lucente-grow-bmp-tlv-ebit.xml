@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+        <!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
+        <!ENTITY RFC8174 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8174.xml">
+        <!ENTITY IANA_RM_CODE_4B_ASN "TBD1">
+        <!ENTITY IANA_RM_CODE_PATH_ID "TBD2">
+        <!ENTITY IANA_RM_CODE_MULTI_LABELS "TBD3">
+        ]>
+
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+<?rfc strict="yes" ?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="4"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes" ?>
+<?rfc compact="yes" ?>
+<?rfc subcompact="no" ?>
+
+<rfc category="std" docName="draft-lucente-grow-bmp-tlv-ebit-00"
+     ipr="trust200902" submissionType="IETF"
+     updates="7854">
+
+    <front>
+        <title abbrev="BMP TLV EBIT">
+	    Support for Enterprise-specific TLVs in the BGP Monitoring Protocol
+	</title>
+
+        <author fullname="Paolo Lucente" initials="P" surname="Lucente">
+            <organization>NTT</organization>
+            <address>
+                <postal>
+                    <street>Siriusdreef 70-72</street>
+                    <city>Hoofddorp</city>
+                    <code>2132</code>
+                    <region>WT</region>
+                    <country>NL</country>
+                </postal>
+                <email>paolo@ntt.net</email>
+            </address>
+        </author>
+	<author fullname="Yunan Gu" initials="Y" surname="Gu">
+            <organization>Huawei</organization>
+            <address>
+                <postal>
+                    <street>Huawei Bld., No.156 Beiqing Rd.</street>
+                    <city>Beijing</city>
+                    <code>100095</code>
+                    <region></region>
+                    <country>China</country>
+                </postal>
+                <email>guyunan@huawei.com</email>
+            </address>
+	</author>
+
+        <date year="2019"/>
+
+        <area>General</area>
+
+        <workgroup>Global Routing Operations</workgroup>
+        <keyword>BGP</keyword>
+        <keyword>BMP</keyword>
+        <keyword>tlv</keyword>
+        <keyword>pen</keyword>
+
+        <abstract>
+            <t>
+		Message types defined by the BGP Monitoring Protocol (BMP) do provision
+		for optional trailing data in TLV - Type, Length, Value - format; however
+		the space for Type value is unique and governed by IANA. To allow the usage
+		of vendor-specific TLVs, a mechanism to define per-vendor Type values is
+		required. With this document we want to introduce an Enterprise Bit, or
+		E-bit, for such purpose.
+            </t>
+        </abstract>
+    </front>
+
+    <middle>
+        <section title="Introduction" anchor="Introduction">
+            <t>
+		The BGP Monitoring Protocol (BMP) is defined in <xref target="RFC7854">RFC 7854</xref>.
+		Support for trailing TLV data is extended by <xref target="I-D.ietf-grow-bmp-tlv">TLV
+		support for BMP Route Monitoring and Peer Down Messages</xref>. 
+	   </t>
+
+           <t>
+		Vendors need the ability to define proprietary Information Elements,
+		because, for example, they are delivering a pre-standards product, or
+		the Information Element is in some way commercially sensitive.
+
+		<vspace blankLines="1"/>
+
+		This document re-defines the format of IANA-registered TLVs in a
+		backward compatible manner with respect to previous documents and
+		existing IANA allocations; it also defines the format for newly
+		introduced enterprise-specific TLVs. 
+
+		<vspace blankLines="1"/>
+
+		The concept of an E-bit, or Enterprise bit, is not new. For example
+		such mechanism is defined in <xref target="RFC7011">Section 3.2 of</xref>
+		for a very similar purpose.
+           </t>
+        </section>
+
+        <section title="Terminology">
+            <t>
+		The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+		NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
+		"MAY", and "OPTIONAL" in this document are to be interpreted as
+		described in BCP 14 <xref target="RFC2119">RFC 2119</xref>
+		<xref target="RFC8174">RFC 8174</xref> when, and only when, they
+		appear in all capitals, as shown here.
+            </t>
+        </section>
+
+	<section title="TLV encoding">
+
+	<section title="IANA-registered TLV encoding">
+	    <t>
+		Existing TLV encoding defined in <xref target="RFC7854">Section 4.4 of</xref>
+		is reviewed as follows:
+	    </t>
+	    <t>
+		<list style="symbols">
+		    <t>
+			1 bit to flag an enterprise-specific TLV set to zero. The
+			TLV Type value must have been defined in <xref target="IANA-BMP">IANA-BMP</xref>  
+		    </t>
+		    <t>
+			15 bits of TLV Type,
+		    </t>
+		    <t>
+			2 octets of TLV Length,
+		    </t>
+		    <t>
+			0 or more octets of TLV Value.
+		    </t>
+		</list>
+	    </t>
+
+	    <figure anchor="BMP-TLV-public-header" align="center">
+	    	<artwork align="center">
+	    	    <![CDATA[
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |E|             Type            |     Length (2 octets)         |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |                        Value (variable)                       |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	    	    ]]>
+	    	</artwork>
+	    </figure>
+	</section>
+
+	<section title="Enterprise-specific TLV encoding">
+	    <t>
+		Enterprise-specific TLV encoding is defined as follows:
+	    </t>
+	    <t>
+		<list style="symbols">
+		    <t>
+			1 bit to flag an enterprise-specific TLV set to one
+		    </t>
+		    <t>
+			15 bits of TLV Type,
+		    </t>
+		    <t>
+			2 octets of TLV Length,
+		    </t>
+		    <t>
+			4 octets of IANA enterprise number <xref target="IANA-PEN">IANA-PEN</xref>
+		    </t>
+		    <t>
+			0 or more octets of TLV Value.
+		    </t>
+		</list>
+	    </t>
+
+	    <figure anchor="BMP-TLV-enterprise-header" align="center">
+	    	<artwork align="center">
+	    	    <![CDATA[
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |E|             Type            |     Length (2 octets)         |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |                        Enterprise number                      |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |                        Value (variable)                       |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	    	    ]]>
+	    	</artwork>
+	    </figure>
+	</section>
+
+	<section title="TLV encoding remarks">
+	    <t>
+		The encoding specified in this document applies to all existing
+		BMP Message Types and their namespaces defined in <xref target="RFC7854">RFC 7854</xref>,
+		<xref target="I-D.ietf-grow-bmp-tlv">TLV support for BMP Route Monitoring and Peer Down
+		Messages</xref> and <xref target="I-D.ietf-grow-bmp-peer-up">BMP Peer Up Message Namespace</xref>.
+		While the proposed encoding is not per-se backward compatible,
+		there is no existing IANA-allocated Type value that makes use of
+		the most significant bit (which is being used in this document
+		to define the E-bit).
+
+		<vspace blankLines="1"/>
+
+		Future BMP Message Types MUST make use of the TLV encoding defined
+		in this document.
+
+		<vspace blankLines="1"/>
+
+		TLVs SHOULD be sorted by their code point. Multiple TLVs of the
+		same type can be repeated as part of the same message and it is
+		left to the specific use-cases whether all, any, the first or
+		the last TLV should be considered. 
+	    </t>
+	</section>
+
+	</section>
+
+        <section title="Security Considerations">
+            <t>
+                It is not believed that this document adds any additional security considerations.
+            </t>
+        </section>
+
+        <section title="IANA Considerations">
+            <t>
+		The TLV Type values used by BMP are managed by IANA as are the
+		Private Enterprise Numbers used by enterprise-specific Type
+		values <xref target="IANA-PEN">IANA-PEN</xref>. This document
+		makes no changes to these registries.
+            </t>
+        </section>
+
+    </middle>
+
+    <back>
+
+        <references title="Normative References">
+		&RFC2119;
+		&RFC8174;
+
+		<?rfc include="reference.RFC.7854.xml"?>
+		<?rfc include='reference.I-D.ietf-grow-bmp-tlv'?>
+		<?rfc include='reference.I-D.ietf-grow-bmp-peer-up'?>
+        </references>
+
+        <references title="Informative References">
+		<?rfc include="reference.RFC.7011.xml"?>
+		<reference anchor="IANA-PEN" target="http://www.iana.org/assignments/enterprise-numbers/">
+			<front>
+				<title>
+					Private Enterprise Numbers
+				</title>
+				<author>
+					<organization>
+						IANA
+					</organization>
+				</author>
+				<date year="1982" />
+			</front>
+		</reference>
+		<reference anchor="IANA-BMP" target="https://www.iana.org/assignments/bmp-parameters/bmp-parameters.xhtml">
+			<front>
+				<title>
+					BGP Monitoring Protocol (BMP) Parameters
+				</title>
+				<author>
+					<organization>
+						IANA
+					</organization>
+				</author>
+				<date year="2016" />
+			</front>
+		</reference>
+        </references>
+
+        <section anchor="Acknowledgements" title="Acknowledgements" numbered="no">
+            <t>
+		TBD
+            </t>
+        </section>
+
+    </back>
+</rfc>
