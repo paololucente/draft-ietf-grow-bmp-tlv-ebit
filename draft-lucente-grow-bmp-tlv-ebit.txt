@@ -64,7 +64,7 @@ Internet-Draft                BMP TLV EBIT                 November 2020
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   2
+   2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   3
    3.  TLV encoding  . . . . . . . . . . . . . . . . . . . . . . . .   3
      3.1.  IANA-registered TLV encoding  . . . . . . . . . . . . . .   3
      3.2.  Enterprise-specific TLV encoding  . . . . . . . . . . . .   3
@@ -74,7 +74,7 @@ Table of Contents
    6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
      6.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
      6.2.  Informative References  . . . . . . . . . . . . . . . . .   5
-   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   5
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   6
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   6
 
 1.  Introduction
@@ -83,9 +83,17 @@ Table of Contents
    Support for trailing TLV data is extended by TLV support for BMP
    Route Monitoring and Peer Down Messages [I-D.ietf-grow-bmp-tlv].
 
-   Vendors need the ability to define proprietary Information Elements,
-   because, for example, they are delivering a pre-standards product, or
-   the Information Element is in some way commercially sensitive.
+   Vendors may need the ability to define proprietary Information
+   Elements, because, for example, they are delivering a pre-standards
+   product, or the Information Element is in some way commercially
+   sensitive.  This would align with Section 4.1 of [RFC8126].
+
+   Also for code point assignment to be eligible, an IETF document needs
+   to be adopted at a Working Group and in a stable condition.  In this
+   context E-bit helps during early development phases where inter-
+   operability among vendors is tested and shipped to network operators
+   to be tested there as well.  This would align with Section 4.2 of
+   [RFC8126].
 
    This document re-defines the format of IANA-registered TLVs in a
    backward compatible manner with respect to previous documents and
@@ -96,14 +104,6 @@ Table of Contents
    such mechanism is defined in Section 3.2 of [RFC7011] for a very
    similar purpose.
 
-2.  Terminology
-
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in BCP
-   14 RFC 2119 [RFC2119] RFC 8174 [RFC8174] when, and only when, they
-   appear in all capitals, as shown here.
-
 
 
 
@@ -113,6 +113,14 @@ Lucente & Gu              Expires May 22, 2021                  [Page 2]
 
 Internet-Draft                BMP TLV EBIT                 November 2020
 
+
+2.  Terminology
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in BCP
+   14 RFC 2119 [RFC2119] RFC 8174 [RFC8174] when, and only when, they
+   appear in all capitals, as shown here.
 
 3.  TLV encoding
 
@@ -154,14 +162,6 @@ Internet-Draft                BMP TLV EBIT                 November 2020
    o  4 octets of IANA enterprise number IANA-PEN [IANA-PEN]
 
    o  0 or more octets of TLV Value.
-
-
-
-
-
-
-
-
 
 
 
@@ -247,6 +247,11 @@ Internet-Draft                BMP TLV EBIT                 November 2020
               DOI 10.17487/RFC7854, June 2016,
               <https://www.rfc-editor.org/info/rfc7854>.
 
+   [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
+              Writing an IANA Considerations Section in RFCs", BCP 26,
+              RFC 8126, DOI 10.17487/RFC8126, June 2017,
+              <https://www.rfc-editor.org/info/rfc8126>.
+
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
@@ -268,11 +273,6 @@ Internet-Draft                BMP TLV EBIT                 November 2020
               RFC 7011, DOI 10.17487/RFC7011, September 2013,
               <https://www.rfc-editor.org/info/rfc7011>.
 
-Acknowledgements
-
-   TBD
-
-
 
 
 
@@ -281,6 +281,10 @@ Lucente & Gu              Expires May 22, 2021                  [Page 5]
 
 Internet-Draft                BMP TLV EBIT                 November 2020
 
+
+Acknowledgements
+
+   The authors would like to thank Thomas Graf for his valuable input.
 
 Authors' Addresses
 
@@ -300,10 +304,6 @@ Authors' Addresses
    China
 
    Email: guyunan@huawei.com
-
-
-
-
 
 
 

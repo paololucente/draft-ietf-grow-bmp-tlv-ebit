@@ -83,9 +83,18 @@
 	   </t>
 
            <t>
-		Vendors need the ability to define proprietary Information Elements,
+		Vendors may need the ability to define proprietary Information Elements,
 		because, for example, they are delivering a pre-standards product, or
-		the Information Element is in some way commercially sensitive.
+		the Information Element is in some way commercially sensitive. This would
+		align with <xref target="RFC8126">Section 4.1 of</xref>.
+
+		<vspace blankLines="1"/>
+
+		Also for code point assignment to be eligible, an IETF document needs to
+		be adopted at a Working Group and in a stable condition. In this context
+		E-bit helps during early development phases where inter-operability among
+		vendors is tested and shipped to network operators to be tested there as
+		well. This would align with <xref target="RFC8126">Section 4.2 of</xref>.
 
 		<vspace blankLines="1"/>
 
@@ -242,6 +251,7 @@
 		&RFC2119;
 		&RFC8174;
 
+		<?rfc include="reference.RFC.8126.xml"?>
 		<?rfc include="reference.RFC.7854.xml"?>
 		<?rfc include='reference.I-D.ietf-grow-bmp-tlv'?>
 		<?rfc include='reference.I-D.ietf-grow-bmp-peer-up'?>
@@ -279,7 +289,7 @@
 
         <section anchor="Acknowledgements" title="Acknowledgements" numbered="no">
             <t>
-		TBD
+		The authors would like to thank Thomas Graf for his valuable input.
             </t>
         </section>
 
