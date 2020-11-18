@@ -6,11 +6,11 @@ Global Routing Operations                                     P. Lucente
 Internet-Draft                                                       NTT
 Updates: 7854 (if approved)                                        Y. Gu
 Intended status: Standards Track                                  Huawei
-Expires: November 6, 2020                                    May 5, 2020
+Expires: May 22, 2021                                  November 18, 2020
 
 
   Support for Enterprise-specific TLVs in the BGP Monitoring Protocol
-                   draft-lucente-grow-bmp-tlv-ebit-01
+                   draft-lucente-grow-bmp-tlv-ebit-02
 
 Abstract
 
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 6, 2020.
+   This Internet-Draft will expire on May 22, 2021.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Lucente & Gu            Expires November 6, 2020                [Page 1]
+Lucente & Gu              Expires May 22, 2021                  [Page 1]
 
-Internet-Draft                BMP TLV EBIT                      May 2020
+Internet-Draft                BMP TLV EBIT                 November 2020
 
 
    the Trust Legal Provisions and are provided without warranty as
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Lucente & Gu            Expires November 6, 2020                [Page 2]
+Lucente & Gu              Expires May 22, 2021                  [Page 2]
 
-Internet-Draft                BMP TLV EBIT                      May 2020
+Internet-Draft                BMP TLV EBIT                 November 2020
 
 
 3.  TLV encoding
@@ -165,9 +165,9 @@ Internet-Draft                BMP TLV EBIT                      May 2020
 
 
 
-Lucente & Gu            Expires November 6, 2020                [Page 3]
+Lucente & Gu              Expires May 22, 2021                  [Page 3]
 
-Internet-Draft                BMP TLV EBIT                      May 2020
+Internet-Draft                BMP TLV EBIT                 November 2020
 
 
       0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
@@ -221,9 +221,9 @@ Internet-Draft                BMP TLV EBIT                      May 2020
 
 
 
-Lucente & Gu            Expires November 6, 2020                [Page 4]
+Lucente & Gu              Expires May 22, 2021                  [Page 4]
 
-Internet-Draft                BMP TLV EBIT                      May 2020
+Internet-Draft                BMP TLV EBIT                 November 2020
 
 
 6.1.  Normative References
@@ -235,7 +235,7 @@ Internet-Draft                BMP TLV EBIT                      May 2020
    [I-D.ietf-grow-bmp-tlv]
               Lucente, P., Gu, Y., and H. Smit, "TLV support for BMP
               Route Monitoring and Peer Down Messages", draft-ietf-grow-
-              bmp-tlv-02 (work in progress), March 2020.
+              bmp-tlv-03 (work in progress), September 2020.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -277,9 +277,9 @@ Acknowledgements
 
 
 
-Lucente & Gu            Expires November 6, 2020                [Page 5]
+Lucente & Gu              Expires May 22, 2021                  [Page 5]
 
-Internet-Draft                BMP TLV EBIT                      May 2020
+Internet-Draft                BMP TLV EBIT                 November 2020
 
 
 Authors' Addresses
@@ -333,4 +333,4 @@ Authors' Addresses
 
 
 
-Lucente & Gu            Expires November 6, 2020                [Page 6]
+Lucente & Gu              Expires May 22, 2021                  [Page 6]
