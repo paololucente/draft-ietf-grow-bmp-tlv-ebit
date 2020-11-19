@@ -65,7 +65,8 @@
         <abstract>
             <t>
 		Message types defined by the BGP Monitoring Protocol (BMP) do provision
-		for optional trailing data in TLV - Type, Length, Value - format; however
+		for data in TLV - Type, Length, Value - format, either in the shape of
+		optional TLVs at the end of a BMP message or Stats Reports TLVs; however
 		the space for Type value is unique and governed by IANA. To allow the usage
 		of vendor-specific TLVs, a mechanism to define per-vendor Type values is
 		required. With this document we want to introduce an Enterprise Bit, or
@@ -126,8 +127,9 @@
 
 	<section title="IANA-registered TLV encoding">
 	    <t>
-		Existing TLV encoding defined in <xref target="RFC7854">Section 4.4 of</xref>
-		is reviewed as follows:
+		Existing TLV encodings are defined in <xref target="RFC7854">Section 4.4 of</xref>
+		(Information TLVs) and <xref target="RFC7854">Section 4.8 of</xref> (Stats Reports
+		TLVs) and are reviewed as follows:
 	    </t>
 	    <t>
 		<list style="symbols">
