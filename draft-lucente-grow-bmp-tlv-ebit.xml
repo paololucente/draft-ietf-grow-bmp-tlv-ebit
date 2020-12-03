@@ -106,7 +106,7 @@
 
 		<vspace blankLines="1"/>
 
-		The concept of an E-bit, or Enterprise bit, is not new. For example
+		The concept of an E-bit, or Enterprise Bit, is not new. For example
 		such mechanism is defined in <xref target="RFC7011">Section 3.2 of</xref>
 		for a very similar purpose.
            </t>
@@ -234,6 +234,14 @@
             <t>
                 It is not believed that this document adds any additional security considerations.
             </t>
+        </section>
+
+        <section title="Operational Considerations">
+	    <t>
+		It is recommended that vendors making use of the Enterprise Bit extension have a
+		well-defined internal registry for privately assigned code points that is also
+		exposed to the public.
+	    </t>
         </section>
 
         <section title="IANA Considerations">
