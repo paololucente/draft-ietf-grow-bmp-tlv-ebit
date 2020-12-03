@@ -6,7 +6,7 @@ Global Routing Operations                                     P. Lucente
 Internet-Draft                                                       NTT
 Updates: 7854 (if approved)                                        Y. Gu
 Intended status: Standards Track                                  Huawei
-Expires: June 5, 2021                                   December 2, 2020
+Expires: June 6, 2021                                   December 3, 2020
 
 
   Support for Enterprise-specific TLVs in the BGP Monitoring Protocol
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on June 5, 2021.
+   This Internet-Draft will expire on June 6, 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Lucente & Gu              Expires June 5, 2021                  [Page 1]
+Lucente & Gu              Expires June 6, 2021                  [Page 1]
 
 Internet-Draft                BMP TLV EBIT                 December 2020
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Lucente & Gu              Expires June 5, 2021                  [Page 2]
+Lucente & Gu              Expires June 6, 2021                  [Page 2]
 
 Internet-Draft                BMP TLV EBIT                 December 2020
 
@@ -127,8 +127,9 @@ Internet-Draft                BMP TLV EBIT                 December 2020
 3.1.  IANA-registered TLV encoding
 
    Existing TLV encodings are defined in Section 4.4 of [RFC7854]
-   (Information TLVs) and Section 4.8 of [RFC7854] (Stats Reports TLVs)
-   and are reviewed as follows:
+   (Information TLVs), Section 4.8 of [RFC7854] (Stats Reports TLVs),
+   draft-ietf-grow-bmp-tlv [I-D.ietf-grow-bmp-tlv] and draft-ietf-grow-
+   bmp-peer-up [I-D.ietf-grow-bmp-peer-up] and are updated as follows:
 
    o  1 bit to flag an enterprise-specific TLV set to zero.  The TLV
       Type value must have been defined in IANA-BMP [IANA-BMP]
@@ -164,8 +165,7 @@ Internet-Draft                BMP TLV EBIT                 December 2020
 
 
 
-
-Lucente & Gu              Expires June 5, 2021                  [Page 3]
+Lucente & Gu              Expires June 6, 2021                  [Page 3]
 
 Internet-Draft                BMP TLV EBIT                 December 2020
 
@@ -221,7 +221,7 @@ Internet-Draft                BMP TLV EBIT                 December 2020
 
 
 
-Lucente & Gu              Expires June 5, 2021                  [Page 4]
+Lucente & Gu              Expires June 6, 2021                  [Page 4]
 
 Internet-Draft                BMP TLV EBIT                 December 2020
 
@@ -277,7 +277,7 @@ Internet-Draft                BMP TLV EBIT                 December 2020
 
 
 
-Lucente & Gu              Expires June 5, 2021                  [Page 5]
+Lucente & Gu              Expires June 6, 2021                  [Page 5]
 
 Internet-Draft                BMP TLV EBIT                 December 2020
 
@@ -333,4 +333,4 @@ Authors' Addresses
 
 
 
-Lucente & Gu              Expires June 5, 2021                  [Page 6]
+Lucente & Gu              Expires June 6, 2021                  [Page 6]

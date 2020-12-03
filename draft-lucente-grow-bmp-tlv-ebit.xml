@@ -128,8 +128,10 @@
 	<section title="IANA-registered TLV encoding">
 	    <t>
 		Existing TLV encodings are defined in <xref target="RFC7854">Section 4.4 of</xref>
-		(Information TLVs) and <xref target="RFC7854">Section 4.8 of</xref> (Stats Reports
-		TLVs) and are reviewed as follows:
+		(Information TLVs), <xref target="RFC7854">Section 4.8 of</xref> (Stats Reports
+		TLVs), <xref target="I-D.ietf-grow-bmp-tlv">draft-ietf-grow-bmp-tlv</xref> and
+		<xref target="I-D.ietf-grow-bmp-peer-up">draft-ietf-grow-bmp-peer-up</xref> and
+		are updated as follows:
 	    </t>
 	    <t>
 		<list style="symbols">
