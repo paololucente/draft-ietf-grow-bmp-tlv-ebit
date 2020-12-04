@@ -66,11 +66,11 @@
             <t>
 		Message types defined by the BGP Monitoring Protocol (BMP) do provision
 		for data in TLV - Type, Length, Value - format, either in the shape of
-		optional TLVs at the end of a BMP message or Stats Reports TLVs; however
+		optional TLVs at the end of a BMP message or Stats Reports TLVs. However
 		the space for Type value is unique and governed by IANA. To allow the usage
 		of vendor-specific TLVs, a mechanism to define per-vendor Type values is
-		required. With this document we want to introduce an Enterprise Bit, or
-		E-bit, for such purpose.
+		required. In this document we introduce an Enterprise Bit, or E-bit, for
+		such purpose.
             </t>
         </abstract>
     </front>
@@ -84,10 +84,9 @@
 	   </t>
 
            <t>
-		Vendors may need the ability to define proprietary Information Elements,
-		because, for example, they are delivering a pre-standards product, or
-		the Information Element is in some way commercially sensitive. This would
-		align with <xref target="RFC8126">Section 4.1 of</xref>.
+		Vendors need the ability to define proprietary Information Elements,
+		because, for example, they are delivering a pre-standard product. This
+		This would align with <xref target="RFC8126">Section 4.1 of</xref>.
 
 		<vspace blankLines="1"/>
 
@@ -106,7 +105,7 @@
 
 		<vspace blankLines="1"/>
 
-		The concept of an E-bit, or Enterprise Bit, is not new. For example
+		The concept of an E-bit, or Enterprise Bit, is not new. For example,
 		such mechanism is defined in <xref target="RFC7011">Section 3.2 of</xref>
 		for a very similar purpose.
            </t>
@@ -143,7 +142,7 @@
 			15 bits of TLV Type,
 		    </t>
 		    <t>
-			2 octets of TLV Length,
+			2 octets of TLV Value length,
 		    </t>
 		    <t>
 			0 or more octets of TLV Value.
@@ -163,6 +162,9 @@
 	    	    ]]>
 	    	</artwork>
 	    </figure>
+	    <t>
+		TLVs SHOULD be sorted by their code point.
+	    </t>
 	</section>
 
 	<section title="Enterprise-specific TLV encoding">
@@ -178,10 +180,10 @@
 			15 bits of TLV Type,
 		    </t>
 		    <t>
-			2 octets of TLV Length,
+			2 octets of IANA PEN plus TLV value length,
 		    </t>
 		    <t>
-			4 octets of IANA enterprise number <xref target="IANA-PEN">IANA-PEN</xref>
+			4 octets of IANA Private Enterprise Number <xref target="IANA-PEN">IANA-PEN</xref>
 		    </t>
 		    <t>
 			0 or more octets of TLV Value.
@@ -223,10 +225,9 @@
 
 		<vspace blankLines="1"/>
 
-		TLVs SHOULD be sorted by their code point. Multiple TLVs of the
-		same type can be repeated as part of the same message and it is
-		left to the specific use-cases whether all, any, the first or
-		the last TLV should be considered. 
+		Multiple TLVs of the same type can be repeated as part of the same
+		message and it is left to the specific use-cases whether all, any,
+		the first or the last TLV should be considered.
 	    </t>
 	</section>
 
@@ -234,7 +235,7 @@
 
         <section title="Security Considerations">
             <t>
-                It is not believed that this document adds any additional security considerations.
+                This document does not add any additional security considerations.
             </t>
         </section>
 
@@ -301,7 +302,8 @@
 
         <section anchor="Acknowledgements" title="Acknowledgements" numbered="no">
             <t>
-		The authors would like to thank Thomas Graf and Jeff Haas for their valuable input.
+		The authors would like to thank Thomas Graf, Jeff Haas and Pierre Francois
+		for their valuable input.
             </t>
         </section>
 
