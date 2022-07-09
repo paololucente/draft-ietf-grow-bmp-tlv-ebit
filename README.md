@@ -1,7 +1,7 @@
 Support for Enterprise-specific TLVs in the BGP Monitoring Protocol
 ===================================================================
 
-> ### draft-lucente-grow-bmp-tlv-ebit
+> ### draft-ietf-grow-bmp-tlv-ebit
 
 - - -
 
@@ -16,7 +16,7 @@ Generating text from xml
 > You'll do this each time you want to generate a text version
 
 ```
-$ xml2rfc draft-lucente-grow-bmp-tlv-ebit.xml --text
-Parsing file draft-lucente-grow-bmp-tlv-ebit.xml
-Created file draft-lucente-grow-bmp-tlv-ebit.txt
+$ xml2rfc draft-ietf-grow-bmp-tlv-ebit.xml --text
+Parsing file draft-ietf-grow-bmp-tlv-ebit.xml
+Created file draft-ietf-grow-bmp-tlv-ebit.txt
 ```
