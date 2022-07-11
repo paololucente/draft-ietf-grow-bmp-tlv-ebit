@@ -84,17 +84,17 @@
 	   </t>
 
            <t>
-		Vendors need the ability to define proprietary Information Elements,
-		because, for example, they are delivering a pre-standard product. This
-		This would align with <xref target="RFC8126">Section 4.1 of</xref>.
+		Vendors need the ability to define proprietary Information Elements for
+		various reasons such as delivering a pre-standard product. This aligns
+		with <xref target="RFC8126">Section 4.1 of</xref>.
 
 		<vspace blankLines="1"/>
 
 		Also for code point assignment to be eligible, an IETF document needs to
 		be adopted at a Working Group and in a stable condition. In this context
 		E-bit helps during early development phases where inter-operability among
-		vendors is tested and shipped to network operators to be tested there as
-		well. This would align with <xref target="RFC8126">Section 4.2 of</xref>.
+		vendors is tested and shipped to network operators for testing. This aligns
+		with <xref target="RFC8126">Section 4.2 of</xref>.
 
 		<vspace blankLines="1"/>
 
@@ -209,7 +209,7 @@
 
 	<section title="TLV encoding remarks">
 	    <t>
-		The encoding specified in this document applies to all existing
+		The TLV encoding specified in this document applies to all existing
 		BMP Message Types and their namespaces defined in <xref target="RFC7854">RFC 7854</xref>,
 		<xref target="I-D.ietf-grow-bmp-tlv">TLV support for BMP Route Monitoring and Peer Down
 		Messages</xref> and <xref target="I-D.ietf-grow-bmp-peer-up">BMP Peer Up Message Namespace</xref>.
