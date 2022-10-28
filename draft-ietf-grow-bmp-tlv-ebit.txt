@@ -306,8 +306,8 @@ Authors' Addresses
 
    Paolo Lucente
    NTT
-   Siriusdreef 70-72
-   Hoofddorp, WT  2132
+   Veemweg 23
+   Barneveld, MT  3771
    NL
 
    Email: paolo@ntt.net
