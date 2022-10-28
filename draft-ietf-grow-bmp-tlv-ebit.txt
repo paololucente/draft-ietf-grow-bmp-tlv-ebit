@@ -6,11 +6,11 @@ Global Routing Operations                                     P. Lucente
 Internet-Draft                                                       NTT
 Updates: 7854 (if approved)                                        Y. Gu
 Intended status: Standards Track                                  Huawei
-Expires: January 12, 2023                                  July 11, 2022
+Expires: May 1, 2023                                    October 28, 2022
 
 
   Support for Enterprise-specific TLVs in the BGP Monitoring Protocol
-                    draft-ietf-grow-bmp-tlv-ebit-00
+                    draft-ietf-grow-bmp-tlv-ebit-01
 
 Abstract
 
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 12, 2023.
+   This Internet-Draft will expire on May 1, 2023.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Lucente & Gu            Expires January 12, 2023                [Page 1]
+Lucente & Gu               Expires May 1, 2023                  [Page 1]
 
-Internet-Draft                BMP TLV EBIT                     July 2022
+Internet-Draft                BMP TLV EBIT                  October 2022
 
 
    include Simplified BSD License text as described in Section 4.e of
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Lucente & Gu            Expires January 12, 2023                [Page 2]
+Lucente & Gu               Expires May 1, 2023                  [Page 2]
 
-Internet-Draft                BMP TLV EBIT                     July 2022
+Internet-Draft                BMP TLV EBIT                  October 2022
 
 
 2.  Terminology
@@ -165,9 +165,9 @@ Internet-Draft                BMP TLV EBIT                     July 2022
 
 
 
-Lucente & Gu            Expires January 12, 2023                [Page 3]
+Lucente & Gu               Expires May 1, 2023                  [Page 3]
 
-Internet-Draft                BMP TLV EBIT                     July 2022
+Internet-Draft                BMP TLV EBIT                  October 2022
 
 
    o  4 octets of IANA Private Enterprise Number IANA-PEN [IANA-PEN]
@@ -221,9 +221,9 @@ Internet-Draft                BMP TLV EBIT                     July 2022
 
 
 
-Lucente & Gu            Expires January 12, 2023                [Page 4]
+Lucente & Gu               Expires May 1, 2023                  [Page 4]
 
-Internet-Draft                BMP TLV EBIT                     July 2022
+Internet-Draft                BMP TLV EBIT                  October 2022
 
 
 6.  IANA Considerations
@@ -239,12 +239,16 @@ Internet-Draft                BMP TLV EBIT                     July 2022
 
    [I-D.ietf-grow-bmp-peer-up]
               Scudder, J., "BMP Peer Up Message Namespace", draft-ietf-
-              grow-bmp-peer-up-00 (work in progress), July 2019.
+              grow-bmp-peer-up-00 (work in progress), July 2019,
+              <https://www.ietf.org/archive/id/draft-ietf-grow-bmp-peer-
+              up-00.txt>.
 
    [I-D.ietf-grow-bmp-tlv]
               Lucente, P. and Y. Gu, "TLV support for BMP Route
               Monitoring and Peer Down Messages", draft-ietf-grow-bmp-
-              tlv-07 (work in progress), March 2022.
+              tlv-09 (work in progress), October 2022,
+              <https://www.ietf.org/archive/id/draft-ietf-grow-bmp-tlv-
+              09.txt>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -267,20 +271,21 @@ Internet-Draft                BMP TLV EBIT                     July 2022
 
 7.2.  Informative References
 
+
+
+
+
+
+
+Lucente & Gu               Expires May 1, 2023                  [Page 5]
+
+Internet-Draft                BMP TLV EBIT                  October 2022
+
+
    [IANA-BMP]
               IANA, "BGP Monitoring Protocol (BMP) Parameters", 2016,
               <https://www.iana.org/assignments/bmp-parameters/bmp-
               parameters.xhtml>.
-
-
-
-
-
-
-Lucente & Gu            Expires January 12, 2023                [Page 5]
-
-Internet-Draft                BMP TLV EBIT                     July 2022
-
 
    [IANA-PEN]
               IANA, "Private Enterprise Numbers", 1982,
@@ -328,9 +333,4 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-Lucente & Gu            Expires January 12, 2023                [Page 6]
+Lucente & Gu               Expires May 1, 2023                  [Page 6]
