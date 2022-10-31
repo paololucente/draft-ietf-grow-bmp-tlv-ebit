@@ -82,29 +82,25 @@
 		Support for trailing TLV data is extended by <xref target="I-D.ietf-grow-bmp-tlv">TLV
 		support for BMP Route Monitoring and Peer Down Messages</xref>. 
 	   </t>
-
            <t>
 		Vendors need the ability to define proprietary Information Elements for
 		various reasons such as delivering a pre-standard product. This aligns
 		with <xref target="RFC8126">Section 4.1 of</xref>.
-
-		<vspace blankLines="1"/>
-
+	   </t>
+	   <t>
 		Also for code point assignment to be eligible, an IETF document needs to
 		be adopted at a Working Group and in a stable condition. In this context
 		E-bit helps during early development phases where inter-operability among
 		vendors is tested and shipped to network operators for testing. This aligns
 		with <xref target="RFC8126">Section 4.2 of</xref>.
-
-		<vspace blankLines="1"/>
-
+	   </t>
+	   <t>
 		This document re-defines the format of IANA-registered TLVs in a
 		backward compatible manner with respect to previous documents and
 		existing IANA allocations; it also defines the format for newly
 		introduced enterprise-specific TLVs. 
-
-		<vspace blankLines="1"/>
-
+	   </t>
+	   <t>
 		The concept of an E-bit, or Enterprise Bit, is not new. For example,
 		such mechanism is defined in <xref target="RFC7011">Section 3.2 of</xref>
 		for a very similar purpose.
@@ -217,14 +213,12 @@
 		there is no existing IANA-allocated Type value that makes use of
 		the most significant bit (which is being used in this document
 		to define the E-bit).
-
-		<vspace blankLines="1"/>
-
+	    </t>
+	    <t>
 		Future BMP Message Types MUST make use of the TLV encoding defined
 		in this document.
-
-		<vspace blankLines="1"/>
-
+	    </t>
+	    <t>
 		Multiple TLVs of the same type can be repeated as part of the same
 		message and it is left to the specific use-cases whether all, any,
 		the first or the last TLV should be considered.
