@@ -204,9 +204,9 @@ Internet-Draft                BMP TLV EBIT                 November 2022
    Future BMP Message Types MUST make use of the TLV encoding defined in
    this document.
 
-   Multiple TLVs of the same type can be repeated as part of the same
-   message and it is left to the specific use-cases whether all, any,
-   the first or the last TLV should be considered.
+   This document refers to TLV support for BMP Route Monitoring and Peer
+   Down Messages [I-D.ietf-grow-bmp-tlv] for any recommendations
+   regarding the use of TLVs (ie. repetitions, ordering, etc.).
 
 4.  Security Considerations
 
