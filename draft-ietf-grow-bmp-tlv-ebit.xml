@@ -131,7 +131,7 @@
 	    <t>
 		<list style="symbols">
 		    <t>
-			1 bit to flag an enterprise-specific TLV set to zero. The
+			1 bit to flag an enterprise-specific TLV, set to zero. The
 			TLV Type value must have been defined in <xref target="IANA-BMP">IANA-BMP</xref>  
 		    </t>
 		    <t>
@@ -170,13 +170,13 @@
 	    <t>
 		<list style="symbols">
 		    <t>
-			1 bit to flag an enterprise-specific TLV set to one
+			1 bit to flag an enterprise-specific TLV, set to one
 		    </t>
 		    <t>
 			15 bits of TLV Type,
 		    </t>
 		    <t>
-			2 octets of IANA PEN plus TLV value length,
+			2 octets of TLV length. Comprising length of IANA PEN plus TLV value,
 		    </t>
 		    <t>
 			4 octets of IANA Private Enterprise Number <xref target="IANA-PEN">IANA-PEN</xref>
