@@ -66,7 +66,8 @@
             <t>
 		Message types defined by the BGP Monitoring Protocol (BMP) do provision
 		for data in TLV - Type, Length, Value - format, either in the shape of
-		optional TLVs at the end of a BMP message or Stats Reports TLVs. However
+		a TLV message body, ie. Route Mirroring and Stats Reports, or optional
+		TLVs at the end of a BMP message, ie. Peer Up and Peer Down. However
 		the space for Type value is unique and governed by IANA. To allow the usage
 		of vendor-specific TLVs, a mechanism to define per-vendor Type values is
 		required. In this document we introduce an Enterprise Bit, or E-bit, for
@@ -79,7 +80,7 @@
         <section title="Introduction" anchor="Introduction">
             <t>
 		The BGP Monitoring Protocol (BMP) is defined in <xref target="RFC7854">RFC 7854</xref>.
-		Support for trailing TLV data is extended by <xref target="I-D.ietf-grow-bmp-tlv">TLV
+		Support for TLV data is extended by <xref target="I-D.ietf-grow-bmp-tlv">TLV
 		support for BMP Route Monitoring and Peer Down Messages</xref>. 
 	   </t>
            <t>
@@ -123,7 +124,8 @@
 	<section title="IANA-registered TLV encoding">
 	    <t>
 		Existing TLV encodings are defined in <xref target="RFC7854">Section 4.4 of</xref>
-		(Information TLVs), <xref target="RFC7854">Section 4.8 of</xref> (Stats Reports
+		(Information TLVs), <xref target="RFC7854">Section 4.7 of</xref> (Route Mirroring
+                TLVs), <xref target="RFC7854">Section 4.8 of</xref> (Stats Reports
 		TLVs), <xref target="I-D.ietf-grow-bmp-tlv">draft-ietf-grow-bmp-tlv</xref> and
 		<xref target="I-D.ietf-grow-bmp-peer-up">draft-ietf-grow-bmp-peer-up</xref> and
 		are updated as follows:
@@ -158,9 +160,6 @@
 	    	    ]]>
 	    	</artwork>
 	    </figure>
-	    <t>
-		TLVs SHOULD be sorted by their code point.
-	    </t>
 	</section>
 
 	<section title="Enterprise-specific TLV encoding">
@@ -195,6 +194,29 @@
   |E|             Type            |     Length (2 octets)         |
   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
   |                        Enterprise number                      |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |                        Value (variable)                       |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	    	    ]]>
+	    	</artwork>
+	    </figure>
+	    <t>
+		In case of indexed TLVs, as defined by
+		<xref target="I-D.ietf-grow-bmp-tlv">TLV support for BMP Route
+                Monitoring and Peer Down Messages</xref>, the index value follows
+		the Enterprise number. 
+	    </t>
+
+	    <figure anchor="BMP-TLV-enterprise-index-header" align="center">
+	    	<artwork align="center">
+	    	    <![CDATA[
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |E|             Type            |     Length (2 octets)         |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |                        Enterprise number                      |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |        Index (2 octets)       |
   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
   |                        Value (variable)                       |
   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
