@@ -315,8 +315,8 @@ Internet-Draft                BMP TLV EBIT                 November 2022
 
 Acknowledgements
 
-   The authors would like to thank Thomas Graf, Jeff Haas and Pierre
-   Francois for their valuable input.
+   The authors would like to thank Thomas Graf, Jeff Haas, Pierre
+   Francois and Camilo Cardona for their valuable input.
 
 Authors' Addresses
 
