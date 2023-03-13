@@ -234,10 +234,18 @@
 		<xref target="I-D.ietf-grow-bmp-tlv">TLV support for BMP Route
 		Monitoring and Peer Down Messages</xref> and
 		<xref target="I-D.ietf-grow-bmp-peer-up">BMP Peer Up Message
-		Namespace</xref>. While the proposed encoding is not per-se
-		backward compatible, there is no existing IANA-allocated Type
-		value that makes use of the most significant bit (which is
-		being used in this document to define the E-bit).
+		Namespace</xref>.
+	    </t>
+	    <t>
+		While the proposed encoding is not per-se backward compatible, there
+		is no existing IANA-allocated Type value that makes use of the most
+		significant bit (which is being used in this document to define the
+		E-bit), except the experimental and reserved ones mentioned in
+		<xref target="RFC7854">Section 10.5 of</xref>,
+		<xref target="RFC7854">Section 10.6 of</xref> and
+		<xref target="RFC7854">Section 10.9 of</xref>. These are all still
+		honored and excluded by the E-bit mechanism such that no PEN will
+		be included as part of the TLV.
 	    </t>
 	    <t>
 		Future BMP Message Types MUST make use of the TLV encoding defined
@@ -323,8 +331,8 @@
 
         <section anchor="Acknowledgements" title="Acknowledgements" numbered="no">
             <t>
-		The authors would like to thank Thomas Graf, Jeff Haas, Pierre Francois
-		and Camilo Cardona for their valuable input.
+		The authors would like to thank Thomas Graf, Jeff Haas, Pierre Francois,
+		Camilo Cardona and Ahmed Elhassany for their valuable input.
             </t>
         </section>
 

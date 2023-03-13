@@ -215,9 +215,9 @@ Internet-Draft                BMP TLV EBIT                    March 2023
    BMP Message Types and their namespaces defined in RFC 7854 [RFC7854],
    TLV support for BMP Route Monitoring and Peer Down Messages
    [I-D.ietf-grow-bmp-tlv] and BMP Peer Up Message Namespace
-   [I-D.ietf-grow-bmp-peer-up].  While the proposed encoding is not per-
-   se backward compatible, there is no existing IANA-allocated Type
-   value that makes use of the most significant bit (which is being used
+   [I-D.ietf-grow-bmp-peer-up].
+
+
 
 
 
@@ -226,7 +226,13 @@ Lucente & Gu            Expires 14 September 2023               [Page 4]
 Internet-Draft                BMP TLV EBIT                    March 2023
 
 
-   in this document to define the E-bit).
+   While the proposed encoding is not per-se backward compatible, there
+   is no existing IANA-allocated Type value that makes use of the most
+   significant bit (which is being used in this document to define the
+   E-bit), except the experimental and reserved ones mentioned in
+   Section 10.5 of [RFC7854], Section 10.6 of [RFC7854] and Section 10.9
+   of [RFC7854].  These are all still honored and excluded by the E-bit
+   mechanism such that no PEN will be included as part of the TLV.
 
    Future BMP Message Types MUST make use of the TLV encoding defined in
    this document.
@@ -269,18 +275,17 @@ Internet-Draft                BMP TLV EBIT                    March 2023
               2022, <https://datatracker.ietf.org/doc/html/draft-ietf-
               grow-bmp-tlv-10>.
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/info/rfc2119>.
-
-
 
 
 Lucente & Gu            Expires 14 September 2023               [Page 5]
 
 Internet-Draft                BMP TLV EBIT                    March 2023
 
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
 
    [RFC7854]  Scudder, J., Ed., Fernando, R., and S. Stuart, "BGP
               Monitoring Protocol (BMP)", RFC 7854,
@@ -314,7 +319,8 @@ Internet-Draft                BMP TLV EBIT                    March 2023
 Acknowledgements
 
    The authors would like to thank Thomas Graf, Jeff Haas, Pierre
-   Francois and Camilo Cardona for their valuable input.
+   Francois, Camilo Cardona and Ahmed Elhassany for their valuable
+   input.
 
 Authors' Addresses
 
@@ -324,12 +330,6 @@ Authors' Addresses
    3771 Barneveld
    Netherlands
    Email: paolo@ntt.net
-
-
-
-
-
-
 
 
 
