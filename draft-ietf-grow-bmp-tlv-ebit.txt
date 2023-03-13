@@ -10,7 +10,7 @@ Expires: 14 September 2023                                 13 March 2023
 
 
   Support for Enterprise-specific TLVs in the BGP Monitoring Protocol
-                    draft-ietf-grow-bmp-tlv-ebit-01
+                    draft-ietf-grow-bmp-tlv-ebit-02
 
 Abstract
 
