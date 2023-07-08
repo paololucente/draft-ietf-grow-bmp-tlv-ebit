@@ -243,9 +243,11 @@
 		E-bit), except the experimental and reserved ones mentioned in
 		<xref target="RFC7854">Section 10.5 of</xref>,
 		<xref target="RFC7854">Section 10.6 of</xref> and
-		<xref target="RFC7854">Section 10.9 of</xref>. These are all still
-		honored and excluded by the E-bit mechanism such that no PEN will
-		be included as part of the TLV.
+		<xref target="RFC7854">Section 10.9 of</xref>. Of these, the
+		Experimental values are being suppressed in favor of using the E-bit
+		mechanism described in this document; the Reserved value is instead
+		excluded by the E-bit mechanism such that no PEN will be included
+		as part of the TLV.
 	    </t>
 	    <t>
 		Future BMP Message Types MUST make use of the TLV encoding defined
@@ -279,9 +281,17 @@
             <t>
 		The TLV Type values used by BMP are managed by IANA as are the
 		Private Enterprise Numbers used by enterprise-specific Type
-		values <xref target="IANA-PEN">IANA-PEN</xref>. This document
-		makes no changes to these registries.
+		values <xref target="IANA-PEN">IANA-PEN</xref>.
             </t>
+
+	    <t>
+		This document requests to remove the Experimental allocation from
+		BMP Initiation and Peer Up Information TLVs, BMP Termination Message
+		TLVs and BMP Route Mirroring TLVs registries as the equivalent action
+		(ie. expressing experimental values) will be instead performed as
+		described in this document, ie. by setting the E-bit and defining
+		the relevant PEN.
+	    </t>
         </section>
 
     </middle>

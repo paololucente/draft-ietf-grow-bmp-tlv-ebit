@@ -76,8 +76,8 @@ Table of Contents
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   6
-   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   6
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   6
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   7
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
@@ -231,8 +231,10 @@ Internet-Draft                BMP TLV EBIT                     July 2023
    significant bit (which is being used in this document to define the
    E-bit), except the experimental and reserved ones mentioned in
    Section 10.5 of [RFC7854], Section 10.6 of [RFC7854] and Section 10.9
-   of [RFC7854].  These are all still honored and excluded by the E-bit
-   mechanism such that no PEN will be included as part of the TLV.
+   of [RFC7854].  Of these, the Experimental values are being suppressed
+   in favor of using the E-bit mechanism described in this document; the
+   Reserved value is instead excluded by the E-bit mechanism such that
+   no PEN will be included as part of the TLV.
 
    Future BMP Message Types MUST make use of the TLV encoding defined in
    this document.
@@ -255,12 +257,30 @@ Internet-Draft                BMP TLV EBIT                     July 2023
 
    The TLV Type values used by BMP are managed by IANA as are the
    Private Enterprise Numbers used by enterprise-specific Type values
-   IANA-PEN [IANA-PEN].  This document makes no changes to these
-   registries.
+   IANA-PEN [IANA-PEN].
+
+   This document requests to remove the Experimental allocation from BMP
+   Initiation and Peer Up Information TLVs, BMP Termination Message TLVs
+   and BMP Route Mirroring TLVs registries as the equivalent action (ie.
+   expressing experimental values) will be instead performed as
+   described in this document, ie. by setting the E-bit and defining the
+   relevant PEN.
 
 7.  References
 
 7.1.  Normative References
+
+
+
+
+
+
+
+
+Lucente & Gu             Expires 9 January 2024                 [Page 5]
+
+Internet-Draft                BMP TLV EBIT                     July 2023
+
 
    [I-D.ietf-grow-bmp-peer-up]
               Scudder, J., "BMP Peer Up Message Namespace", Work in
@@ -274,13 +294,6 @@ Internet-Draft                BMP TLV EBIT                     July 2023
               Internet-Draft, draft-ietf-grow-bmp-tlv-12, 27 March 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-grow-
               bmp-tlv-12>.
-
-
-
-Lucente & Gu             Expires 9 January 2024                 [Page 5]
-
-Internet-Draft                BMP TLV EBIT                     July 2023
-
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -316,6 +329,15 @@ Internet-Draft                BMP TLV EBIT                     July 2023
               RFC 7011, DOI 10.17487/RFC7011, September 2013,
               <https://www.rfc-editor.org/info/rfc7011>.
 
+
+
+
+
+Lucente & Gu             Expires 9 January 2024                 [Page 6]
+
+Internet-Draft                BMP TLV EBIT                     July 2023
+
+
 Acknowledgements
 
    The authors would like to thank Thomas Graf, Jeff Haas, Pierre
@@ -332,12 +354,6 @@ Authors' Addresses
    Email: paolo@ntt.net
 
 
-
-Lucente & Gu             Expires 9 January 2024                 [Page 6]
-
-Internet-Draft                BMP TLV EBIT                     July 2023
-
-
    Yunan Gu
    Huawei
    Huawei Bld., No.156 Beiqing Rd.
@@ -345,22 +361,6 @@ Internet-Draft                BMP TLV EBIT                     July 2023
    100095
    China
    Email: guyunan@huawei.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
