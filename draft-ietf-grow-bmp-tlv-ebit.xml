@@ -237,6 +237,31 @@
 		Namespace</xref>.
 	    </t>
 	    <t>
+		Stats Report messages are also encoded in a TLV-like fashion, as
+		documented in <xref target="RFC7854">Section 4.8 of</xref>. E-bit
+		does hence similarly apply to these messages too, with the most
+		relevant bit of Stat Type set to 1 in order to flag the presence
+		of a 4-bytes PEN field following Stat Len and preeceding Stat
+		Data, ie.:   
+	    </t>
+	    <figure anchor="BMP-Stats-Report-enterprise--header" align="center">
+	    	<artwork align="center">
+	    	    <![CDATA[
+
+      0                   1                   2                   3
+      0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+     |E|       Stat Type             |          Stat Len             |
+     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+     |                        Enterprise number                      |
+     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+     |                        Stat Data                              |
+     ~                                                               ~
+     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+	    	    ]]>
+	    	</artwork>
+	    </figure>
+	    <t>
 		While the proposed encoding is not per-se backward compatible, there
 		is no existing IANA-allocated Type value that makes use of the most
 		significant bit (which is being used in this document to define the

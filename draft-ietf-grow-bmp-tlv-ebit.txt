@@ -72,10 +72,10 @@ Table of Contents
      3.3.  TLV encoding remarks  . . . . . . . . . . . . . . . . . .   4
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
    5.  Operational Considerations  . . . . . . . . . . . . . . . . .   5
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
-   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
-     7.2.  Informative References  . . . . . . . . . . . . . . . . .   6
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
    Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   7
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
 
@@ -226,6 +226,28 @@ Lucente & Gu              Expires 15 April 2024                 [Page 4]
 Internet-Draft                BMP TLV EBIT                  October 2023
 
 
+   Stats Report messages are also encoded in a TLV-like fashion, as
+   documented in Section 4.8 of [RFC7854].  E-bit does hence similarly
+   apply to these messages too, with the most relevant bit of Stat Type
+   set to 1 in order to flag the presence of a 4-bytes PEN field
+   following Stat Len and preeceding Stat Data, ie.:
+
+
+
+        0                   1                   2                   3
+        0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+       |E|       Stat Type             |          Stat Len             |
+       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+       |                        Enterprise number                      |
+       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+       |                        Stat Data                              |
+       ~                                                               ~
+       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+
+                                 Figure 4
+
    While the proposed encoding is not per-se backward compatible, there
    is no existing IANA-allocated Type value that makes use of the most
    significant bit (which is being used in this document to define the
@@ -253,6 +275,13 @@ Internet-Draft                BMP TLV EBIT                  October 2023
    extension have a well-defined internal registry for privately
    assigned code points that is also exposed to the public.
 
+
+
+Lucente & Gu              Expires 15 April 2024                 [Page 5]
+
+Internet-Draft                BMP TLV EBIT                  October 2023
+
+
 6.  IANA Considerations
 
    The TLV Type values used by BMP are managed by IANA as are the
@@ -269,18 +298,6 @@ Internet-Draft                BMP TLV EBIT                  October 2023
 7.  References
 
 7.1.  Normative References
-
-
-
-
-
-
-
-
-Lucente & Gu              Expires 15 April 2024                 [Page 5]
-
-Internet-Draft                BMP TLV EBIT                  October 2023
-
 
    [I-D.ietf-grow-bmp-peer-up]
               Scudder, J. and P. Lucente, "BMP Peer Up Message
@@ -311,6 +328,16 @@ Internet-Draft                BMP TLV EBIT                  October 2023
               RFC 8126, DOI 10.17487/RFC8126, June 2017,
               <https://www.rfc-editor.org/info/rfc8126>.
 
+
+
+
+
+
+Lucente & Gu              Expires 15 April 2024                 [Page 6]
+
+Internet-Draft                BMP TLV EBIT                  October 2023
+
+
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
@@ -329,14 +356,6 @@ Internet-Draft                BMP TLV EBIT                  October 2023
               Protocol for the Exchange of Flow Information", STD 77,
               RFC 7011, DOI 10.17487/RFC7011, September 2013,
               <https://www.rfc-editor.org/info/rfc7011>.
-
-
-
-
-Lucente & Gu              Expires 15 April 2024                 [Page 6]
-
-Internet-Draft                BMP TLV EBIT                  October 2023
-
 
 Acknowledgements
 
@@ -361,25 +380,6 @@ Authors' Addresses
    100095
    China
    Email: guyunan@huawei.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
