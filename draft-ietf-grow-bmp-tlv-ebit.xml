@@ -18,7 +18,7 @@
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
 
-<rfc category="std" docName="draft-ietf-grow-bmp-tlv-ebit-04"
+<rfc category="std" docName="draft-ietf-grow-bmp-tlv-ebit-05"
      ipr="trust200902" submissionType="IETF"
      updates="7854">
 
@@ -54,7 +54,7 @@
             </address>
 	</author>
 
-        <date year="2023"/>
+        <date year="2024"/>
 
         <area>General</area>
 
