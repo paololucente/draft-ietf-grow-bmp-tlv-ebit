@@ -205,7 +205,7 @@
 	    <t>
 		In case of indexed TLVs, as defined by
 		<xref target="I-D.ietf-grow-bmp-tlv">TLV support for BMP Route
-                Monitoring and Peer Down Messages</xref>, the index value follows
+                Monitoring and Peer Down Messages</xref>, the index value precedes
 		the Enterprise number. 
 	    </t>
 
@@ -216,9 +216,9 @@
   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
   |E|             Type            |     Length (2 octets)         |
   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-  |                        Enterprise number                      |
-  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
   |        Index (2 octets)       |
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+  |                        Enterprise number                      |
   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
   |                        Value (variable)                       |
   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -241,8 +241,8 @@
 		documented in <xref target="RFC7854">Section 4.8 of</xref>. E-bit
 		does hence similarly apply to these messages too, with the most
 		relevant bit of Stat Type set to 1 in order to flag the presence
-		of a 4-bytes PEN field following Stat Len and preeceding Stat
-		Data, ie.:   
+		of a 4-bytes PEN field following Stat Len field and preeceding Stat
+		Data field, ie.:
 	    </t>
 	    <figure anchor="BMP-Stats-Report-enterprise--header" align="center">
 	    	<artwork align="center">
