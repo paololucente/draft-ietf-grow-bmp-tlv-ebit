@@ -360,8 +360,8 @@ Internet-Draft                BMP TLV EBIT                 February 2024
 Acknowledgements
 
    The authors would like to thank Thomas Graf, Jeff Haas, Pierre
-   Francois, Camilo Cardona and Ahmed Elhassany for their valuable
-   input.
+   Francois, Camilo Cardona, Ahmed Elhassany and Luuk Hendriks for their
+   valuable input.
 
 Authors' Addresses
 
