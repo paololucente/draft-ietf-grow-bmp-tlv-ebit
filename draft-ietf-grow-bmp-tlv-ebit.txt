@@ -6,11 +6,11 @@ Global Routing Operations                                     P. Lucente
 Internet-Draft                                                       NTT
 Updates: 7854 (if approved)                                        Y. Gu
 Intended status: Standards Track                                  Huawei
-Expires: 21 July 2025                                    17 January 2025
+Expires: 10 August 2025                                  6 February 2025
 
 
   Support for Enterprise-specific TLVs in the BGP Monitoring Protocol
-                    draft-ietf-grow-bmp-tlv-ebit-06
+                    draft-ietf-grow-bmp-tlv-ebit-07
 
 Abstract
 
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 July 2025.
+   This Internet-Draft will expire on 10 August 2025.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Lucente & Gu              Expires 21 July 2025                  [Page 1]
+Lucente & Gu             Expires 10 August 2025                 [Page 1]
 
-Internet-Draft                BMP TLV EBIT                  January 2025
+Internet-Draft                BMP TLV EBIT                 February 2025
 
 
    extracted from this document must include Revised BSD License text as
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Lucente & Gu              Expires 21 July 2025                  [Page 2]
+Lucente & Gu             Expires 10 August 2025                 [Page 2]
 
-Internet-Draft                BMP TLV EBIT                  January 2025
+Internet-Draft                BMP TLV EBIT                 February 2025
 
 
 2.  Terminology
@@ -165,9 +165,9 @@ Internet-Draft                BMP TLV EBIT                  January 2025
 
 
 
-Lucente & Gu              Expires 21 July 2025                  [Page 3]
+Lucente & Gu             Expires 10 August 2025                 [Page 3]
 
-Internet-Draft                BMP TLV EBIT                  January 2025
+Internet-Draft                BMP TLV EBIT                 February 2025
 
 
    *  2 octets of TLV length.  Comprising length of IANA PEN plus TLV
@@ -221,9 +221,9 @@ Internet-Draft                BMP TLV EBIT                  January 2025
 
 
 
-Lucente & Gu              Expires 21 July 2025                  [Page 4]
+Lucente & Gu             Expires 10 August 2025                 [Page 4]
 
-Internet-Draft                BMP TLV EBIT                  January 2025
+Internet-Draft                BMP TLV EBIT                 February 2025
 
 
    Stats Report messages are also encoded in a TLV-like fashion, as
@@ -277,9 +277,9 @@ Internet-Draft                BMP TLV EBIT                  January 2025
 
 
 
-Lucente & Gu              Expires 21 July 2025                  [Page 5]
+Lucente & Gu             Expires 10 August 2025                 [Page 5]
 
-Internet-Draft                BMP TLV EBIT                  January 2025
+Internet-Draft                BMP TLV EBIT                 February 2025
 
 
 6.  IANA Considerations
@@ -309,9 +309,9 @@ Internet-Draft                BMP TLV EBIT                  January 2025
    [I-D.ietf-grow-bmp-tlv]
               Lucente, P. and Y. Gu, "BMP v4: TLV support for BMP Route
               Monitoring and Peer Down Messages", Work in Progress,
-              Internet-Draft, draft-ietf-grow-bmp-tlv-14, 18 March 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-grow-
-              bmp-tlv-14>.
+              Internet-Draft, draft-ietf-grow-bmp-tlv-15, 17 January
+              2025, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              grow-bmp-tlv-15>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -333,9 +333,9 @@ Internet-Draft                BMP TLV EBIT                  January 2025
 
 
 
-Lucente & Gu              Expires 21 July 2025                  [Page 6]
+Lucente & Gu             Expires 10 August 2025                 [Page 6]
 
-Internet-Draft                BMP TLV EBIT                  January 2025
+Internet-Draft                BMP TLV EBIT                 February 2025
 
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
@@ -389,4 +389,4 @@ Authors' Addresses
 
 
 
-Lucente & Gu              Expires 21 July 2025                  [Page 7]
+Lucente & Gu             Expires 10 August 2025                 [Page 7]
