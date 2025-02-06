@@ -24,7 +24,7 @@
 
     <front>
         <title abbrev="BMP TLV EBIT">
-	    Support for Enterprise-specific TLVs in the BGP Monitoring Protocol
+	    Support for Enterprise-specific TLVs in the BGP Monitoring Protocol (BMP)
 	</title>
 
         <author fullname="Paolo Lucente" initials="P" surname="Lucente">
@@ -67,13 +67,11 @@
         <abstract>
             <t>
 		Message types defined by the BGP Monitoring Protocol (BMP) do provision
-		for data in TLV - Type, Length, Value - format, either in the shape of
-		a TLV message body, ie. Route Mirroring and Stats Reports, or optional
-		TLVs at the end of a BMP message, ie. Peer Up and Peer Down. However
-		the space for Type value is unique and governed by IANA. To allow the usage
-		of vendor-specific TLVs, a mechanism to define per-vendor Type values is
-		required. In this document we introduce an Enterprise Bit, or E-bit, for
-		such purpose.
+		for data in Type, Length, Value (TLV) format, either in the shape of
+		a TLV message body, e.g., Route Mirroring and Stats Reports, or optional
+		TLVs at the end of a BMP message (e.g., Peer Up and Peer Down). However,
+		there is no support for vendor-specific TLVs. This document introduces
+		an Enterprise Bit (E-bit) for such purpose.
             </t>
         </abstract>
     </front>
@@ -81,32 +79,32 @@
     <middle>
         <section title="Introduction" anchor="Introduction">
             <t>
-		The BGP Monitoring Protocol (BMP) is defined in <xref target="RFC7854">RFC 7854</xref>.
-		Support for TLV data is extended by <xref target="I-D.ietf-grow-bmp-tlv">TLV
-		support for BMP Route Monitoring and Peer Down Messages</xref>. 
+		The BGP Monitoring Protocol (BMP) <xref target="RFC7854">RFC 7854</xref>.
+		includes support for TLV-structured data for a subset of the message types.
+		Generalized TLV-structured data support is introduced in
+		<xref target="I-D.ietf-grow-bmp-tlv">BMPv4</xref>.
 	   </t>
            <t>
-		Vendors need the ability to define proprietary Information Elements for
-		various reasons such as delivering a pre-standard product. This aligns
+		Vendors need the ability to define proprietary information for various
+		reasons such as delivering a pre-standard product. This aligns
 		with <xref target="RFC8126">Section 4.1 of</xref>.
 	   </t>
 	   <t>
-		Also for code point assignment to be eligible, an IETF document needs to
+		Also for type assignment to be eligible, an IETF document needs to
 		be adopted at a Working Group and in a stable condition. In this context
 		E-bit helps during early development phases where inter-operability among
-		vendors is tested and shipped to network operators for testing. This aligns
-		with <xref target="RFC8126">Section 4.2 of</xref>.
+		vendorss is tested and shipped to network operators for testing. This
+		aligns with <xref target="RFC8126">Section 4.2 of</xref>.
 	   </t>
 	   <t>
-		This document re-defines the format of IANA-registered TLVs in a
-		backward compatible manner with respect to previous documents and
-		existing IANA allocations; it also defines the format for newly
-		introduced enterprise-specific TLVs. 
+		This document re-defines the format of IANA-maintaained TLVs in a
+		backward compatible manner with respect to current IANA allocations.
+		The document also defines the format for newly introduced enterprise-specific
+		TLVs. 
 	   </t>
 	   <t>
-		The concept of an E-bit, or Enterprise Bit, is not new. For example,
-		such mechanism is defined in <xref target="RFC7011">Section 3.2 of</xref>
-		for a very similar purpose.
+		The concept of an E-bit is not new. For example, such mechanism is defined
+		in <xref target="RFC7011">Section 3.2 of</xref> for a very similar purpose.
            </t>
         </section>
 
@@ -119,13 +117,16 @@
 		<xref target="RFC8174">RFC 8174</xref> when, and only when, they
 		appear in all capitals, as shown here.
             </t>
+	    <t>
+		The document uses the terms defined in <xref target="RFC7854">RFC 7854</xref>.
+	    </t>
         </section>
 
-	<section title="TLV encoding">
+	<section title="TLV Encoding">
 
-	<section title="IANA-registered TLV encoding">
+	<section title="IANA-registered TLV Encoding">
 	    <t>
-		Existing TLV encodings are defined in <xref target="RFC7854">Section 4.4 of</xref>
+		The TLV encoding for BMP is defined in <xref target="RFC7854">Section 4.4 of</xref>
 		(Information TLVs), <xref target="RFC7854">Section 4.7 of</xref> (Route Mirroring
                 TLVs), <xref target="RFC7854">Section 4.8 of</xref> (Stats Reports
 		TLVs), <xref target="I-D.ietf-grow-bmp-tlv">draft-ietf-grow-bmp-tlv</xref> and
@@ -203,10 +204,9 @@
 	    	</artwork>
 	    </figure>
 	    <t>
-		In case of indexed TLVs, as defined by
-		<xref target="I-D.ietf-grow-bmp-tlv">TLV support for BMP Route
-                Monitoring and Peer Down Messages</xref>, the index value precedes
-		the Enterprise number. 
+		In case of indexed TLVs as defined by <xref
+		target="I-D.ietf-grow-bmp-tlv">BMPv4</xref>, the index
+		value precedes the Enterprise number. 
 	    </t>
 
 	    <figure anchor="BMP-TLV-enterprise-index-header" align="center">
@@ -227,7 +227,7 @@
 	    </figure>
 	</section>
 
-	<section title="TLV encoding remarks">
+	<section title="TLV Encoding">
 	    <t>
 		The TLV encoding specified in this document applies to all existing
 		BMP Message Types and their namespaces defined in <xref target="RFC7854">RFC 7854</xref>,
@@ -241,8 +241,8 @@
 		documented in <xref target="RFC7854">Section 4.8 of</xref>. E-bit
 		does hence similarly apply to these messages too, with the most
 		relevant bit of Stat Type set to 1 in order to flag the presence
-		of a 4-bytes PEN field following Stat Len field and preeceding Stat
-		Data field, ie.:
+		of a 4-bytes PEN field following Stat Len field and preceding Stat
+		Data field, i.e.:
 	    </t>
 	    <figure anchor="BMP-Stats-Report-enterprise--header" align="center">
 	    	<artwork align="center">
@@ -262,7 +262,7 @@
 	    	</artwork>
 	    </figure>
 	    <t>
-		While the proposed encoding is not per-se backward compatible, there
+		While the encoding is not per-se backward compatible, there
 		is no existing IANA-allocated Type value that makes use of the most
 		significant bit (which is being used in this document to define the
 		E-bit), except the experimental and reserved ones mentioned in
@@ -290,15 +290,22 @@
 
         <section title="Security Considerations">
             <t>
-                This document does not add any additional security considerations.
+                This document does not add any additional security considerations
+		compared to <xref target="RFC7854">RFC7854</xref> and <xref
+		target="I-D.ietf-grow-bmp-tlv">I-D.ietf-grow-bmp-tlv</xref>.
             </t>
         </section>
 
         <section title="Operational Considerations">
 	    <t>
-		It is recommended that vendors making use of the Enterprise Bit
-		extension have a well-defined internal registry for privately
+		It is recommended that implementors making use of the Enterprise
+		Bit extension have a well-defined internal registry for privately
 		assigned code points that is also exposed to the public.
+	    </t>
+	    <t>
+		It is also recommended that implementors of the spec described in
+		this document do refer to <xref target="I-D.ietf-grow-bmp-tlv">
+		Section 6 and 8 of</xref>. 
 	    </t>
         </section>
 
@@ -312,10 +319,13 @@
 	    <t>
 		This document requests to remove the Experimental allocation from
 		BMP Initiation and Peer Up Information TLVs, BMP Termination Message
-		TLVs and BMP Route Mirroring TLVs registries as the equivalent action
-		(ie. expressing experimental values) will be instead performed as
-		described in this document, ie. by setting the E-bit and defining
-		the relevant PEN.
+		TLVs and BMP Route Mirroring TLVs registries: the code points now
+		flagged Experimental will become Unassigned.
+	    </t>
+	    <t>
+		Also, the top most bit of each registry will be reserved to the
+		E-bit, reducing the Unassigned pool: the maximum availble value for
+		the registries will be 32767 (i.e. as opposed to current 65530). 
 	    </t>
         </section>
 
@@ -368,6 +378,7 @@
             <t>
 		The authors would like to thank Thomas Graf, Jeff Haas, Pierre Francois,
 		Camilo Cardona, Ahmed Elhassany and Luuk Hendriks for their valuable input.
+		The authors would also like to thank Mohamed Boucadair for his review.
             </t>
         </section>
 
