@@ -6,7 +6,7 @@ Global Routing Operations                                     P. Lucente
 Internet-Draft                                                       NTT
 Updates: 7854 (if approved)                                        Y. Gu
 Intended status: Standards Track                                  Huawei
-Expires: 10 August 2025                                  6 February 2025
+Expires: 26 February 2026                                 25 August 2025
 
 
   Support for Enterprise-specific TLVs in the BGP Monitoring Protocol
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 August 2025.
+   This Internet-Draft will expire on 26 February 2026.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Lucente & Gu             Expires 10 August 2025                 [Page 1]
+Lucente & Gu            Expires 26 February 2026                [Page 1]
 
-Internet-Draft                BMP TLV EBIT                 February 2025
+Internet-Draft                BMP TLV EBIT                   August 2025
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -82,7 +82,7 @@ Table of Contents
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   7
    Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .   7
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   7
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Lucente & Gu             Expires 10 August 2025                 [Page 2]
+Lucente & Gu            Expires 26 February 2026                [Page 2]
 
-Internet-Draft                BMP TLV EBIT                 February 2025
+Internet-Draft                BMP TLV EBIT                   August 2025
 
 
    The concept of an E-bit is not new.  For example, such mechanism is
@@ -165,9 +165,9 @@ Internet-Draft                BMP TLV EBIT                 February 2025
 
 
 
-Lucente & Gu             Expires 10 August 2025                 [Page 3]
+Lucente & Gu            Expires 26 February 2026                [Page 3]
 
-Internet-Draft                BMP TLV EBIT                 February 2025
+Internet-Draft                BMP TLV EBIT                   August 2025
 
 
    *  1 bit to flag an enterprise-specific TLV, set to one
@@ -221,9 +221,9 @@ Internet-Draft                BMP TLV EBIT                 February 2025
 
 
 
-Lucente & Gu             Expires 10 August 2025                 [Page 4]
+Lucente & Gu            Expires 26 February 2026                [Page 4]
 
-Internet-Draft                BMP TLV EBIT                 February 2025
+Internet-Draft                BMP TLV EBIT                   August 2025
 
 
 3.3.  TLV Encoding
@@ -277,9 +277,9 @@ Internet-Draft                BMP TLV EBIT                 February 2025
 
 
 
-Lucente & Gu             Expires 10 August 2025                 [Page 5]
+Lucente & Gu            Expires 26 February 2026                [Page 5]
 
-Internet-Draft                BMP TLV EBIT                 February 2025
+Internet-Draft                BMP TLV EBIT                   August 2025
 
 
 4.  Security Considerations
@@ -303,14 +303,19 @@ Internet-Draft                BMP TLV EBIT                 February 2025
    Private Enterprise Numbers used by enterprise-specific Type values
    IANA-PEN [IANA-PEN].
 
-   This document requests to remove the Experimental allocation from BMP
-   Initiation and Peer Up Information TLVs, BMP Termination Message TLVs
-   and BMP Route Mirroring TLVs registries: the code points now flagged
-   Experimental will become Unassigned.
+   This document requests to make the range 0-16383 as Standards Action
+   (down from current 0-32767); it also asks to make the range
+   16384-32767 as First Come First Served (in place of current
+   32768-65530).  This applies to the BMP Initiation Information TLVs,
+   BMP Peer Up Message TLVs, BMP Termination Message TLVs and BMP Route
+   Mirroring TLVs registries.
 
-   Also, the top most bit of each registry will be reserved to the
-   E-bit, reducing the Unassigned pool: the maximum availble value for
-   the registries will be 32767 (i.e. as opposed to current 65530).
+   This document also requests to remove the Experimental allocation
+   from the same registries, the code points now flagged Experimental
+   will become Unassigned.  The top most bit of each registry will be
+   reserved to the E-bit, reducing the Unassigned pool: the maximum
+   availble value for assignment for the registries will be 32767 (ie.
+   as opposed to current 65530).
 
 7.  References
 
@@ -323,20 +328,23 @@ Internet-Draft                BMP TLV EBIT                 February 2025
               <https://datatracker.ietf.org/doc/html/draft-ietf-grow-
               bmp-peer-up-05>.
 
-   [I-D.ietf-grow-bmp-tlv]
-              Lucente, P. and Y. Gu, "BMP v4: TLV support for BMP Route
-              Monitoring and Peer Down Messages", Work in Progress,
-              Internet-Draft, draft-ietf-grow-bmp-tlv-15, 17 January
-              2025, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              grow-bmp-tlv-15>.
 
 
 
 
-Lucente & Gu             Expires 10 August 2025                 [Page 6]
+
+Lucente & Gu            Expires 26 February 2026                [Page 6]
 
-Internet-Draft                BMP TLV EBIT                 February 2025
+Internet-Draft                BMP TLV EBIT                   August 2025
 
+
+   [I-D.ietf-grow-bmp-tlv]
+              Lucente, P. and Y. Gu, "BMP v4: TLV Support for BGP
+              Monitoring Protocol (BMP) Route Monitoring and Peer Down
+              Messages", Work in Progress, Internet-Draft, draft-ietf-
+              grow-bmp-tlv-17, 7 July 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-grow-
+              bmp-tlv-17>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -379,6 +387,13 @@ Acknowledgements
    valuable input.  The authors would also like to thank Mohamed
    Boucadair for his review.
 
+
+
+Lucente & Gu            Expires 26 February 2026                [Page 7]
+
+Internet-Draft                BMP TLV EBIT                   August 2025
+
+
 Authors' Addresses
 
    Paolo Lucente
@@ -386,14 +401,6 @@ Authors' Addresses
    Veemweg 23
    3771 Barneveld
    Netherlands
-
-
-
-Lucente & Gu             Expires 10 August 2025                 [Page 7]
-
-Internet-Draft                BMP TLV EBIT                 February 2025
-
-
    Email: paolo@ntt.net
 
 
@@ -438,11 +445,4 @@ Internet-Draft                BMP TLV EBIT                 February 2025
 
 
 
-
-
-
-
-
-
-
-Lucente & Gu             Expires 10 August 2025                 [Page 8]
+Lucente & Gu            Expires 26 February 2026                [Page 8]

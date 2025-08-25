@@ -315,17 +315,21 @@
 		Private Enterprise Numbers used by enterprise-specific Type
 		values <xref target="IANA-PEN">IANA-PEN</xref>.
             </t>
-
 	    <t>
-		This document requests to remove the Experimental allocation from
-		BMP Initiation and Peer Up Information TLVs, BMP Termination Message
-		TLVs and BMP Route Mirroring TLVs registries: the code points now
-		flagged Experimental will become Unassigned.
+		This document requests to make the range 0-16383 as Standards
+		Action (down from current 0-32767); it also asks to make the
+		range 16384-32767 as First Come First Served (in place of current
+		32768-65530). This applies to the BMP Initiation Information TLVs,
+		BMP Peer Up Message TLVs, BMP Termination Message TLVs and BMP
+		Route Mirroring TLVs registries.
 	    </t>
 	    <t>
-		Also, the top most bit of each registry will be reserved to the
-		E-bit, reducing the Unassigned pool: the maximum availble value for
-		the registries will be 32767 (i.e. as opposed to current 65530). 
+		This document also requests to remove the Experimental allocation
+		from the same registries, the code points now flagged Experimental
+		will become Unassigned. The top most bit of each registry will be
+		reserved to the E-bit, reducing the Unassigned pool: the maximum
+		availble value for assignment for the registries will be 32767
+		(ie. as opposed to current 65530).
 	    </t>
         </section>
 
